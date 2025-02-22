@@ -10,6 +10,7 @@ export default function App() {
   const [showContact, setShowContact] = useState(false)
   const [musicStarted, setMusicStarted] = useState(false)
 
+
   const handleRocketClick = () => {
     setShowContact(true)
     setTimeout(() => setShowContact(false), 3000)
@@ -23,8 +24,8 @@ export default function App() {
     <>
       <MatrixBackground />
       {musicStarted && <BackgroundMusic />}
-      <div 
-      style={{'bottom': '10px'}}
+      <div
+        style={{ 'bottom': '10px' }}
         className="fixed  right-4 z-50 cursor-pointer bg-black/50 p-2 rounded"
         onClick={startMusic}
       >

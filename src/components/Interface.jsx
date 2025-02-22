@@ -1,6 +1,9 @@
 import { motion } from 'framer-motion'
+import { useState } from 'react'
 
 export default function Interface({ showContact }) {
+
+  const [showContactInternal, setShowContactInternal] = useState(false)
   return (
     <div className="fixed top-0 left-0 w-full h-full pointer-events-none">
       <motion.div
@@ -22,9 +25,9 @@ export default function Interface({ showContact }) {
         >
           Sean's Universe
         </h1>
-        <p     style={{ 
-            opacity: 0.01
-          }} className="text-2xl text-white/60">Click the avatar& rocket</p>
+        <p style={{
+          opacity: 0.01
+        }} className="text-2xl text-white/60">Click on avatar & rocket</p>
       </motion.div>
 
       <motion.div
@@ -33,13 +36,14 @@ export default function Interface({ showContact }) {
         transition={{ delay: 1 }}
         className="absolute top-5 right-5 text-white text-right pointer-events-auto"
       >
-        <p className="text-sm">Drag to explore</p>
-        <p className="text-sm">Scroll to zoom</p>
-        <p className="text-sm text-yellow-400">Click avatar & rocket</p>
+        <div onClick={() => setShowContactInternal(!showContactInternal)}>
+          <p className="text-sm">Drag to explore</p>
+          <p className="text-sm">Scroll to zoom</p>
+          <p className="text-sm text-yellow-400">Click avatar & rocket</p></div>
       </motion.div>
 
       {/* Contact Popup */}
-      {showContact && (
+      {(showContact || showContactInternal) && (
         <div
           className="absolute top-[40%] left-[50%] transform translate-x-[-50%] translate-y-[-50%]"
           style={{

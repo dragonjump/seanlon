@@ -2,7 +2,7 @@ import { useAnimations, useGLTF } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber'
 import { useEffect, useRef, useState } from 'react'
 import * as THREE from 'three'
- 
+
 // const INITIAL_AVATAR_URL = 'https://models.readyplayer.me/67b957b8ede0db61fa031b1f.glb'
 // const SECOND_AVATAR_URL = 'https://models.readyplayer.me/67b940d37c673862f4c07c84.glb'
 
@@ -10,7 +10,7 @@ import * as THREE from 'three'
 
 
 let DEFAULT_BASE_URL = `${import.meta.env.BASE_URL}` || '';
-DEFAULT_BASE_URL = DEFAULT_BASE_URL == '/' ? '' : DEFAULT_BASE_URL; 
+DEFAULT_BASE_URL = DEFAULT_BASE_URL == '/' ? '' : DEFAULT_BASE_URL;
 const INITIAL_AVATAR_URL = DEFAULT_BASE_URL + "/models/67b957b8ede0db61fa031b1f.glb";
 const SECOND_AVATAR_URL = DEFAULT_BASE_URL + "/models/67b940d37c673862f4c07c84.glb";
 
@@ -44,14 +44,18 @@ export default function Avatar({ position = [0, 0, 0], onClick }) {
       setAvatarUrl(SECOND_AVATAR_URL)
       setIsJumping(true)
       startTime.current = Date.now()
-    }, 5000)
+    }, 1500)
 
     return () => clearTimeout(timer)
   }, [])
 
   const handleClick = (e) => {
     e.stopPropagation()
+    setJumpCount(0)
+    setIsJumping(true)
     setAvatarUrl(prev => prev === INITIAL_AVATAR_URL ? SECOND_AVATAR_URL : INITIAL_AVATAR_URL)
+
+    setIsJumping(false)
     if (onClick) onClick()
   }
 
@@ -65,7 +69,7 @@ export default function Avatar({ position = [0, 0, 0], onClick }) {
 
       // Check if a jump cycle is complete
       if (elapsed < 50 && jumpProgress < 0.1) {  // Near the bottom of the jump
-        if (jumpCount <2) {
+        if (jumpCount < 2) {
           setJumpCount(prev => prev + 1)
         } else if (!isRotating) {
           setIsJumping(false)
@@ -95,9 +99,9 @@ export default function Avatar({ position = [0, 0, 0], onClick }) {
 
   return (
     <group ref={avatarRef} position={position} onClick={handleClick}>
-      <primitive 
-        object={avatarUrl === INITIAL_AVATAR_URL ? initialAvatar.scene : secondAvatar.scene} 
-        scale={1.5} 
+      <primitive
+        object={avatarUrl === INITIAL_AVATAR_URL ? initialAvatar.scene : secondAvatar.scene}
+        scale={1.5}
       />
       {/* Front spotlight */}
       <spotLight
