@@ -9,16 +9,17 @@ const skills = {
     // Frontend
     '⚛️ React', '📱 React Native', '🎨 Next.js', '💅 Tailwind CSS',
     '🌐 JavaScript', '🔷 TypeScript', '📦 Webpack', '🎭 Jest',
+    '🎭 Angular',
     // Backend
     '🟢 Node.js', '🐍 Python', '☕ Java', '🚀 Express.js',
     '🔥 Firebase', '🗄️ MongoDB', '🐘 PostgreSQL', '🔒 Redis',
     // DevOps & Tools
-    '🐳 Docker', '☸️ Kubernetes', '🐙 GitHub', '👷 Jenkins',
+    '🐳 Docker', '☸️ Kubernetes', '🐙 GitHub', '👷 Jira','👷 Jenkins',
     '☁️ AWS', '🔄 CI/CD', '📊 GraphQL', '🔍 Elasticsearch',
     // AI & ML
-    '🧠 TensorFlow', '🔥 PyTorch', '🤖 LLMs', '👁️ Computer Vision',
+    '🧠 Transformer', '🔥 PyTorch', '🤖 LLMs', '👁️ Computer Vision',
     // Architecture
-    '🏗️ Microservices', '🔌 REST APIs', '📡 WebSockets', '🔐 OAuth'
+    '🏗️ Microservices', '🔌Architectures','🔌 REST APIs', '📡 WebSockets', '🔐 OAuth'
   ],
   leadership: [
     '🏛️ Architecture Design', '👥 Engineering Leadership', '🌱 Team Building',
