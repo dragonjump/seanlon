@@ -1,5 +1,5 @@
 # 3D Engineering Portfolio
-
+Feel free to fork
 A modern, interactive 3D portfolio website built with React, React Three Fiber (R3F), and Drei. This website showcases your journey through various engineering roles in an immersive 3D environment.
 
 ## Features
@@ -27,6 +27,12 @@ npm run dev
 npm run build
 ```
 
+
+4. Create your avatar and download the file replacement
+- Read [How create my own readyplayer avatar](https://docs.readyplayer.me/ready-player-me/what-is-ready-player-me)
+```bash
+readyplayer.me
+```
 ## Technical Stack
 
 - React
@@ -40,3 +46,11 @@ npm run build
 ## Note
 
 Make sure to add the Inter Bold font file in the `/public/fonts/` directory as `Inter_Bold.json` for the 3D text to work properly.
+
+
+## Deploy your site
+
+- Read [How deploy github](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site)
+- Run `npm build`
+- Copy all content from `dist/<contents-here>`
+- Switch to `gh-pages` branch, then paste contents from `dist/<contents-here>`
