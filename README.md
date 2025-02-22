@@ -2,6 +2,16 @@
 Feel free to fork
 A modern, interactive 3D portfolio website built with React, React Three Fiber (R3F), and Drei. This website showcases your journey through various engineering roles in an immersive 3D environment.
 
+## Demo
+ [Live demo](http://seanlon.site)
+![Image Snapshot 1](https://www.seanlon.site/snapshot1.png)
+![Image Snapshot 2](https://www.seanlon.site/snapshot2.png)
+
+## Credits
+1. Windsurf
+2. Readplayer
+3. Polypizza
+
 ## Features
 
 - Interactive 3D environment
