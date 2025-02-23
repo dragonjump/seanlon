@@ -5,6 +5,7 @@ import Interface from './components/Interface'
 import { OrbitControls } from '@react-three/drei'
 import MatrixBackground from './components/MatrixBackground'
 import BackgroundMusic from './components/BackgroundMusic'
+import ChatBot from './components/ChatBot'
 
 export default function App() {
   const [showContact, setShowContact] = useState(false)
@@ -24,6 +25,7 @@ export default function App() {
     <>
       <MatrixBackground />
       {musicStarted && <BackgroundMusic />}
+      <ChatBot />
       <div
         style={{ 'bottom': '10px' }}
         className="fixed  right-4 z-50 cursor-pointer bg-black/50 p-2 rounded"
