@@ -33,12 +33,12 @@ export default function ChatBot() {
 
   useEffect(() => {
     setTimeout(() => {
-
-      const url = new URL(window.location.href);
-      if (url.hash === '#chat') {
+      const urlRaw = (window.location.href)
+      const url = new URL(urlRaw);
+      if (url.hash === '#chat' || urlRaw.toLowerCase().indexOf('chat') > -1) {
         setIsOpen(true);
       }
-    }, 2000);
+    }, 2100);
   }, [])
 
   const isValidEmail = (email) => {
