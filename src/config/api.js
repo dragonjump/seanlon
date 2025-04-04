@@ -31,7 +31,8 @@ export const apiService = {
 
   logConversation: async (data) => {
     return callApi(API_ENDPOINTS.CONVERSATION_LOG, {
-      user: data.email?.split('@')[0] || '',
+      // user: data.email?.split('@')[0] || '',
+      user: data.userMessage,
       email: data.email || '',
       ai: data.message || '',
       sessionid: data.sessionId

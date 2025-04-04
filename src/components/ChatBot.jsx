@@ -31,6 +31,16 @@ export default function ChatBot() {
     }
   }, [messages]);
 
+  useEffect(() => {
+    setTimeout(() => {
+
+      const url = new URL(window.location.href);
+      if (url.hash === '#chat') {
+        setIsOpen(true);
+      }
+    }, 2000);
+  }, [])
+
   const isValidEmail = (email) => {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
   };
@@ -40,6 +50,7 @@ export default function ChatBot() {
       await apiService.logConversation({
         email: userEmail,
         message,
+        userMessage: inputMessage,
         sessionId
       });
     } catch (error) {
